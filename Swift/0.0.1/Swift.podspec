@@ -91,7 +91,7 @@ end
 
 Pod::Spec.new do |s|
 
-s.name         = "LinUtil"
+s.name         = "LinClient"
 s.version      = "0.0.1"
 s.summary      = "A short description of util."
 
@@ -150,16 +150,16 @@ s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => 
 # s.public_header_files = "Classes/**/*.h"
 
 
-s.subspec 'LinUtil' do |util|
+s.subspec 'LinClient' do |client|
 
 	
 
 	#util.name          = 'LinUtil'
-    util.source_files = 'util/util/*'
+    util.source_files = 'client/client/**/*'
     #util.dependency 'ShareKit/Core'
-    util.subspec 'SQLite' do |sqlite|
-    	sqlite.source_files = 'util/util/SQLite/*'
-    end
+    #util.subspec 'SQLite' do |sqlite|
+    #	sqlite.source_files = 'util/util/SQLite/*'
+    #end
   end
 
 end
