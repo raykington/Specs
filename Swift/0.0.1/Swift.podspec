@@ -70,8 +70,11 @@ s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => 
 s.subspec 'LinUtil' do |util|
 	
 	#util.name          = 'LinUtil'
-    util.source_files = 'util/util/**/*'
+    util.source_files = 'util/util/*'
     #util.dependency 'ShareKit/Core'
+    util.subspec 'SQLite' do |sqlite|
+    	sqlite.source_files = 'util/util/SQLite/*'
+    end
   end
 
 end
