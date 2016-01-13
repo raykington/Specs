@@ -155,7 +155,7 @@ s.subspec 'LinClient' do |client|
 	
 
 	#util.name          = 'LinUtil'
-    util.source_files = 'client/client/**/*'
+    client.source_files = 'client/client/**/*'
     #util.dependency 'ShareKit/Core'
     #util.subspec 'SQLite' do |sqlite|
     #	sqlite.source_files = 'util/util/SQLite/*'
