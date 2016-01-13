@@ -69,14 +69,14 @@ s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => 
 
 s.subspec 'LinUtil' do |util|
 
-	s.platform     = :ios, "8.0"
-	s.name         = "LinUtil"
-	s.version      = "0.0.1"
-	s.summary      = "A short description of util."
-	s.description  = <<-DESC
+	util.platform     = :ios, "8.0"
+	util.name         = "LinUtil"
+	util.version      = "0.0.1"
+	util.summary      = "A short description of util."
+	util.description  = <<-DESC
 description
 DESC
-	s.homepage     = "http://EXAMPLE/util"
+	util.homepage     = "http://EXAMPLE/util"
 
 	#util.name          = 'LinUtil'
     util.source_files = 'util/util/*'
