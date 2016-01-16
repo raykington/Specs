@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinUtil"
-  #s.module_name  = "LinUtil"
+  s.name         = "LinUtil.swift"
+  s.module_name  = "LinUtil"
   s.version      = "0.0.1"
   s.summary      = "A short description of util."
 
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/objc-util.git", :tag => "0.0.1" }
-  #s.source       = { :git => "https://github.com/wangjianglin/objc-util.git"}
+  #s.source       = { :git => "https://github.com/wangjianglin/swift-util.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/swift-util.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,14 +94,14 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/*.{h,m,mm}"
+  s.source_files  = "util/*"
 
 
-  #s.subspec 'SQLite' do |sqlite|
-  #  sqlite.source_files = "util/SQLite/*"
+  s.subspec 'SQLite' do |sqlite|
+    sqlite.source_files = "util/SQLite/*"
   #  sqlite.public_header_files = "util/SQLite/*.h"
-  #  sqlite.private_header_files = "util/SQLite/*.h"
-  #end
+    sqlite.private_header_files = "util/SQLite/*.h"
+  end
 
   #s.exclude_files = "Classes/Exclude"
 
@@ -156,14 +156,13 @@ Pod::Spec.new do |s|
   #              }
 #s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-weak-lswiftXCTest', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
 #'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-#s.preserve_path    = 'util/*'
+s.preserve_path    = 'util/*'
 
 #"xcconfig": {
 #    "SWIFT_INCLUDE_PATHS": "${PODS_ROOT}/SQLite.swift/SQLite3"
  # }
- # = ;
 
-  #s.xcconfig = {"MACH_O_TYPE" => "staticlib"}
+ # s.xcconfig = {"SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/LinUtil/util"}
 
   #s.dependency "JSONKit", "~> 1.4"
 
