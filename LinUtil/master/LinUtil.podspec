@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LinUtil"
   #s.module_name  = "LinUtil"
-  s.version      = "0.0.1"
+  s.version      = "master"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
