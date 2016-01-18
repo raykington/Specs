@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/objc-client.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/objc-client.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/objc.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/objc.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,17 +94,17 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "client/*.{h,m,mm}"
+  s.source_files  = "client/client/*.{h,m,mm}"
 
   #s.subspec 'tcp' do |tcp|
-  #  tcp.source_files = "client/tcp/*.{h,m,mm}"
+  #  tcp.source_files = "client/client/tcp/*.{h,m,mm}"
   #end
 
   s.subspec 'http' do |http|
-    http.source_files = "client/http/*.{h,m,mm}"
+    http.source_files = "client/client/http/*.{h,m,mm}"
 
     http.subspec 'AFNetworking' do |afNetworking|
-      afNetworking.source_files = "client/http/AFNetworking/*.{h,m,mm}"
+      afNetworking.source_files = "client/client/http/AFNetworking/*.{h,m,mm}"
     end
   end
 

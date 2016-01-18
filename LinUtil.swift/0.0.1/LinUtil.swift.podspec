@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift-util.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift-util.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift-util.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,18 +94,18 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/*"
+  s.source_files  = "util/util/*"
 
 
   s.subspec 'SQLite' do |sqlite|
-    sqlite.source_files = "util/SQLite/*"
+    sqlite.source_files = "util/util/SQLite/*"
   #  sqlite.public_header_files = "util/SQLite/*.h"
-    sqlite.private_header_files = "util/SQLite/*.h"
+    sqlite.private_header_files = "util/util/SQLite/*.h"
   end
 
   #s.exclude_files = "Classes/Exclude"
 
-   s.public_header_files = "util/*.h"
+   s.public_header_files = "util/util/*.h"
    #s.private_header_files = "util/SQLite/*.h"
    #s.public_header_files = "util/LinUtil.h"
 

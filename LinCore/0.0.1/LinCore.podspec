@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/objc-core.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/objc-core.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/objc.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/objc.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -95,66 +95,66 @@ Pod::Spec.new do |s|
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
   
-  s.source_files  = "core/*.{h,m,mm}"
+  s.source_files  = "core/core/*.{h,m,mm}"
 
   s.subspec 'camera' do |camera|
-    camera.source_files = "core/camera/*.{h,m,mm}"
+    camera.source_files = "core/core/camera/*.{h,m,mm}"
 
     camera.subspec 'SCRecorder' do |recorder|
-      recorder.source_files = "core/camera/SCRecorder/*.{h,m,mm}"
+      recorder.source_files = "core/core/camera/SCRecorder/*.{h,m,mm}"
     end
 
   end
   
   s.subspec 'MJRefresh' do |mjrefresh|
-    mjrefresh.source_files = "core/MJRefresh/*.{h,m,mm}"
+    mjrefresh.source_files = "core/core/MJRefresh/*.{h,m,mm}"
   end
 
 
   s.subspec 'CheckBox' do |checkBox|
-    checkBox.source_files = "core/CheckBox/*.{h,m,mm}"
+    checkBox.source_files = "core/core/CheckBox/*.{h,m,mm}"
   end
 
   s.subspec 'Form' do |form|
-    form.source_files = "core/Form/*.{h,m,mm}"
+    form.source_files = "core/core/Form/*.{h,m,mm}"
   end
 
   s.subspec 'ImagePicker' do |imagePicker|
-    imagePicker.source_files = "core/ImagePicker/*.{h,m,mm}"
+    imagePicker.source_files = "core/core/ImagePicker/*.{h,m,mm}"
   end
 
   #s.subspec 'Indicator' do |indicator|
-  #  indicator.source_files = "core/Indicator/*.{h,m,mm}"
+  #  indicator.source_files = "core/core/Indicator/*.{h,m,mm}"
   #end
 
   s.subspec 'Message' do |message|
-    message.source_files = "core/Message/*.{h,m,mm}"
+    message.source_files = "core/core/Message/*.{h,m,mm}"
   end
 
   s.subspec 'Pick' do |pick|
-    pick.source_files = "core/Pick/*.{h,m,mm}"
+    pick.source_files = "core/core/Pick/*.{h,m,mm}"
   end
 
   s.subspec 'MRProgress' do |progress|
-    progress.source_files = "core/MRProgress/*.{h,m,mm}"
+    progress.source_files = "core/core/MRProgress/*.{h,m,mm}"
 
     progress.subspec 'Blur' do |blur|
-      blur.source_files = "core/MRProgress/Blur/*.{h,m,mm}";
+      blur.source_files = "core/core/MRProgress/Blur/*.{h,m,mm}";
     end
 
     progress.subspec 'Components' do |components|
-      components.source_files = "core/MRProgress/Components/*.{h,m,mm}"
+      components.source_files = "core/core/MRProgress/Components/*.{h,m,mm}"
     end
     
     progress.subspec 'Utils' do |utils|
-      utils.source_files = "core/MRProgress/Utils/*.{h,m,mm}"
+      utils.source_files = "core/core/MRProgress/Utils/*.{h,m,mm}"
     end
 
   end
 
 
   s.subspec 'Storyboards' do |storyboards|
-    storyboards.source_files = "core/Storyboards/*.{h,m,mm}"
+    storyboards.source_files = "core/core/Storyboards/*.{h,m,mm}"
   end
 
 
@@ -169,7 +169,7 @@ Pod::Spec.new do |s|
 
   #s.exclude_files = "Classes/Exclude"
 
-   s.public_header_files = "core/*.h"
+   s.public_header_files = "core/core/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

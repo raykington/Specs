@@ -80,8 +80,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/objc-web.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/objc-web.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/objc.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/objc.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -93,7 +93,7 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "web/*"
+  s.source_files  = "web/web/*"
   #s.exclude_files = "Classes/Exclude"
 
    #s.public_header_files = "util/**/*.h"
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-   s.resource  = "LinWeb.bundle"
+   s.resource  = "web/LinWeb.bundle"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
