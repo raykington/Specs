@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinUtil"
+  s.name         = "LinServer.swift"
+  s.module_name  = "LinServer"
   s.version      = "0.0.1"
   s.summary      = "A short description of util."
 
@@ -80,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/swift-util.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,10 +93,15 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/**/*"
+  s.source_files  = "server/server/*"
+
+  s.subspec 'CocoaHTTPServer' do |cocoaHTTPServer|
+    cocoaHTTPServer.source_files = "server/server/CocoaHTTPServer/**/*"
+  end
+
   #s.exclude_files = "Classes/Exclude"
 
-   #s.public_header_files = "util/**/*.h"
+   s.public_header_files = "server/server/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

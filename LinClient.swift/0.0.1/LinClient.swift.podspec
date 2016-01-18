@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift-client.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift-client.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,19 +94,19 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "client/*"
+  s.source_files  = "client/client/*"
 
   s.subspec 'tcp' do |tcp|
-    tcp.source_files = "client/tcp/*"
+    tcp.source_files = "client/client/tcp/*"
   end
 
   s.subspec 'http' do |http|
-    http.source_files = "client/http/*"
+    http.source_files = "client/client/http/*"
   end
 
   #s.exclude_files = "Classes/Exclude"
 
-   #s.public_header_files = "util/**/*.h"
+   #s.public_header_files = "client/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
