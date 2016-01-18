@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift-core.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift-core.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,60 +94,60 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "core/*"
+  s.source_files  = "core/core/*"
 
 
   s.subspec 'Table' do |table|
 
-    table.source_files = "core/Table/*"
+    table.source_files = "core/core/Table/*"
 
     table.subspec 'MJRefresh' do |mjrefresh|
-      mjrefresh.source_files = "core/Table/MJRefresh/*"
+      mjrefresh.source_files = "core/core/Table/MJRefresh/*"
     end
 
 
     table.subspec 'JASwipeCell' do |jaSwipeCell|
-      jaSwipeCell.source_files = "core/Table/JASwipeCell/*"
+      jaSwipeCell.source_files = "core/core/Table/JASwipeCell/*"
     end
 
 
     table.subspec 'MGSwipeTableCell' do |mgSwipeTableCell|
-      mgSwipeTableCell.source_files = "core/Table/MGSwipeTableCell/*"
+      mgSwipeTableCell.source_files = "core/core/Table/MGSwipeTableCell/*"
     end
 
   end
 
   s.subspec 'CheckBox' do |checkBox|
-    checkBox.source_files = "core/CheckBox/*"
+    checkBox.source_files = "core/core/CheckBox/*"
   end
 
   s.subspec 'Form' do |form|
-    form.source_files = "core/Form/*"
+    form.source_files = "core/core/Form/*"
   end
 
   s.subspec 'ImagePicker' do |imagePicker|
-    imagePicker.source_files = "core/ImagePicker/*"
+    imagePicker.source_files = "core/core/ImagePicker/*"
   end
 
   s.subspec 'Indicator' do |indicator|
-    indicator.source_files = "core/Indicator/*"
+    indicator.source_files = "core/core/Indicator/*"
   end
 
   s.subspec 'Message' do |message|
-    message.source_files = "core/Message/*"
+    message.source_files = "core/core/Message/*"
   end
 
   s.subspec 'Pick' do |pick|
-    pick.source_files = "core/Pick/*"
+    pick.source_files = "core/core/Pick/*"
   end
 
 
   s.subspec 'Storyboards' do |storyboards|
-    storyboards.source_files = "core/Storyboards/*"
+    storyboards.source_files = "core/core/Storyboards/*"
   end
 
   #s.subspec 'Form' do |form|
-  #  form.source_files = "core/Form/*"
+  #  form.source_files = "core/core/Form/*"
   #end
 
 
@@ -155,7 +155,7 @@ Pod::Spec.new do |s|
 
   #s.exclude_files = "Classes/Exclude"
   # s.private_header_files = "core/**/*.h"
-  s.public_header_files = "core/**/*.h"
+  s.public_header_files = "core/core/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

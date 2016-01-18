@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinUtil.swift"
-  s.module_name  = "LinUtil"
-  s.version      = "0.0.1"
+  s.name         = "LinUtil"
+  #s.module_name  = "LinUtil"
+  s.version      = "0.0.0"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "7.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
+  #s.source       = { :git => "https://github.com/wangjianglin/objc.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/objc.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,18 +94,18 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/util/*"
+  s.source_files  = "util/util/*.{h,m,mm}"
 
 
-  s.subspec 'SQLite' do |sqlite|
-    sqlite.source_files = "util/util/SQLite/*"
+  #s.subspec 'SQLite' do |sqlite|
+  #  sqlite.source_files = "util/SQLite/*"
   #  sqlite.public_header_files = "util/SQLite/*.h"
-    sqlite.private_header_files = "util/util/SQLite/*.h"
-  end
+  #  sqlite.private_header_files = "util/SQLite/*.h"
+  #end
 
   #s.exclude_files = "Classes/Exclude"
 
-   s.public_header_files = "util/util/*.h"
+   s.public_header_files = "util/*.h"
    #s.private_header_files = "util/SQLite/*.h"
    #s.public_header_files = "util/LinUtil.h"
 
@@ -156,13 +156,14 @@ Pod::Spec.new do |s|
   #              }
 #s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-weak-lswiftXCTest', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
 #'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-s.preserve_path    = 'util/*'
+#s.preserve_path    = 'util/*'
 
 #"xcconfig": {
 #    "SWIFT_INCLUDE_PATHS": "${PODS_ROOT}/SQLite.swift/SQLite3"
  # }
+ # = ;
 
- # s.xcconfig = {"SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/LinUtil/util"}
+  #s.xcconfig = {"MACH_O_TYPE" => "staticlib"}
 
   #s.dependency "JSONKit", "~> 1.4"
 

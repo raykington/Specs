@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git" }
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -98,36 +98,44 @@ Pod::Spec.new do |s|
 
   s.subspec 'CocoaHTTPServer' do |cocoaHTTPServer|
     cocoaHTTPServer.source_files = "server/server/CocoaHTTPServer/*"
+    #cocoaHTTPServer.private_header_files = "server/server/CocoaHTTPServer/*.h"
 
     cocoaHTTPServer.subspec 'CocoaAsyncSocket' do |asyncSocket|
       asyncSocket.source_files = "server/server/CocoaHTTPServer/CocoaAsyncSocket/*"
+      #asyncSocket.private_header_files = "server/server/CocoaHTTPServer/CocoaAsyncSocket/*.h"
     end
 
     cocoaHTTPServer.subspec 'CocoaLumberjack' do |lumberjack|
       lumberjack.source_files = "server/server/CocoaHTTPServer/CocoaLumberjack/*"
+      #lumberjack.private_header_files = "server/server/CocoaHTTPServer/CocoaLumberjack/*.h"
+      lumberjack.private_header_files = "server/server/CocoaHTTPServer/CocoaLumberjack/DDASLLogger.h"
 
       lumberjack.subspec 'Extensions' do |extensions|
         extensions.source_files = "server/server/CocoaHTTPServer/CocoaLumberjack/Extensions/*"
+        #extensions.private_header_files = "server/server/CocoaHTTPServer/CocoaLumberjack/Extensions/*.h"
       end
     end
 
     cocoaHTTPServer.subspec 'Categories' do |categories|
       categories.source_files = "server/server/CocoaHTTPServer/Categories/*"
+      #categories.private_header_files = "server/server/CocoaHTTPServer/Categories/*.h"
     end
-    
+
     cocoaHTTPServer.subspec 'Mime' do |mime|
       mime.source_files = "server/server/CocoaHTTPServer/Mime/*"
+      #mime.private_header_files = "server/server/CocoaHTTPServer/Mime/*.h"
     end
     
     cocoaHTTPServer.subspec 'Responses' do |responses|
       responses.source_files = "server/server/CocoaHTTPServer/Responses/*"
+      #responses.private_header_files = "server/server/CocoaHTTPServer/Responses/*.h"
     end
     
   end
 
   #s.exclude_files = "Classes/Exclude"
 
-   s.public_header_files = "server/server/**/*.h"
+   s.public_header_files = "server/server/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -154,7 +162,7 @@ Pod::Spec.new do |s|
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
+  #s.libraries = "system_asl"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

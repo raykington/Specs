@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinUtil.swift"
-  s.module_name  = "LinUtil"
-  s.version      = "0.0.1"
+  s.name         = "LinCore"
+  s.module_name  = "LinCore"
+  s.version      = "0.0.0"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "7.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
+  #s.source       = { :git => "https://github.com/wangjianglin/objc.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/objc.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,20 +94,82 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/util/*"
+  
+  s.source_files  = "core/core/*.{h,m,mm}"
 
+  s.subspec 'camera' do |camera|
+    camera.source_files = "core/core/camera/*.{h,m,mm}"
 
-  s.subspec 'SQLite' do |sqlite|
-    sqlite.source_files = "util/util/SQLite/*"
-  #  sqlite.public_header_files = "util/SQLite/*.h"
-    sqlite.private_header_files = "util/util/SQLite/*.h"
+    camera.subspec 'SCRecorder' do |recorder|
+      recorder.source_files = "core/core/camera/SCRecorder/*.{h,m,mm}"
+    end
+
   end
+  
+  s.subspec 'MJRefresh' do |mjrefresh|
+    mjrefresh.source_files = "core/core/MJRefresh/*.{h,m,mm}"
+  end
+
+
+  s.subspec 'CheckBox' do |checkBox|
+    checkBox.source_files = "core/core/CheckBox/*.{h,m,mm}"
+  end
+
+  s.subspec 'Form' do |form|
+    form.source_files = "core/core/Form/*.{h,m,mm}"
+  end
+
+  s.subspec 'ImagePicker' do |imagePicker|
+    imagePicker.source_files = "core/core/ImagePicker/*.{h,m,mm}"
+  end
+
+  #s.subspec 'Indicator' do |indicator|
+  #  indicator.source_files = "core/core/Indicator/*.{h,m,mm}"
+  #end
+
+  s.subspec 'Message' do |message|
+    message.source_files = "core/core/Message/*.{h,m,mm}"
+  end
+
+  s.subspec 'Pick' do |pick|
+    pick.source_files = "core/core/Pick/*.{h,m,mm}"
+  end
+
+  s.subspec 'MRProgress' do |progress|
+    progress.source_files = "core/core/MRProgress/*.{h,m,mm}"
+
+    progress.subspec 'Blur' do |blur|
+      blur.source_files = "core/core/MRProgress/Blur/*.{h,m,mm}";
+    end
+
+    progress.subspec 'Components' do |components|
+      components.source_files = "core/core/MRProgress/Components/*.{h,m,mm}"
+    end
+    
+    progress.subspec 'Utils' do |utils|
+      utils.source_files = "core/core/MRProgress/Utils/*.{h,m,mm}"
+    end
+
+  end
+
+
+  s.subspec 'Storyboards' do |storyboards|
+    storyboards.source_files = "core/core/Storyboards/*.{h,m,mm}"
+  end
+
+
+
+
+
+  #s.subspec 'SQLite' do |sqlite|
+  #  sqlite.source_files = "util/SQLite/*"
+  #  sqlite.public_header_files = "util/SQLite/*.h"
+  #  sqlite.private_header_files = "util/SQLite/*.h"
+  #end
 
   #s.exclude_files = "Classes/Exclude"
 
-   s.public_header_files = "util/util/*.h"
-   #s.private_header_files = "util/SQLite/*.h"
-   #s.public_header_files = "util/LinUtil.h"
+   s.public_header_files = "core/core/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,7 +196,7 @@ Pod::Spec.new do |s|
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
    #s.library   = "sqlite3"
-   s.libraries        = 'sqlite3'
+   #s.libraries        = 'sqlite3'
   # s.libraries = "iconv", "xml2"
 
 
@@ -161,10 +223,11 @@ s.preserve_path    = 'util/*'
 #"xcconfig": {
 #    "SWIFT_INCLUDE_PATHS": "${PODS_ROOT}/SQLite.swift/SQLite3"
  # }
+ # = ;
 
- # s.xcconfig = {"SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/LinUtil/util"}
+  #s.xcconfig = {"MACH_O_TYPE" => "staticlib"}
 
-  #s.dependency "JSONKit", "~> 1.4"
+  s.dependency "LinClient", s.version.to_s
 
   #s.dependency 'ObjectiveCPod', '~>3.2.1'
 

@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinUtil.swift"
-  s.module_name  = "LinUtil"
-  s.version      = "0.0.1"
+  s.name         = "LinCore.swift"
+  s.module_name  = "LinCore"
+  s.version      = "0.0.0"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,20 +94,68 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "util/util/*"
+  s.source_files  = "core/core/*"
 
 
-  s.subspec 'SQLite' do |sqlite|
-    sqlite.source_files = "util/util/SQLite/*"
-  #  sqlite.public_header_files = "util/SQLite/*.h"
-    sqlite.private_header_files = "util/util/SQLite/*.h"
+  s.subspec 'Table' do |table|
+
+    table.source_files = "core/core/Table/*"
+
+    table.subspec 'MJRefresh' do |mjrefresh|
+      mjrefresh.source_files = "core/core/Table/MJRefresh/*"
+    end
+
+
+    table.subspec 'JASwipeCell' do |jaSwipeCell|
+      jaSwipeCell.source_files = "core/core/Table/JASwipeCell/*"
+    end
+
+
+    table.subspec 'MGSwipeTableCell' do |mgSwipeTableCell|
+      mgSwipeTableCell.source_files = "core/core/Table/MGSwipeTableCell/*"
+    end
+
   end
 
-  #s.exclude_files = "Classes/Exclude"
+  s.subspec 'CheckBox' do |checkBox|
+    checkBox.source_files = "core/core/CheckBox/*"
+  end
 
-   s.public_header_files = "util/util/*.h"
-   #s.private_header_files = "util/SQLite/*.h"
-   #s.public_header_files = "util/LinUtil.h"
+  s.subspec 'Form' do |form|
+    form.source_files = "core/core/Form/*"
+  end
+
+  s.subspec 'ImagePicker' do |imagePicker|
+    imagePicker.source_files = "core/core/ImagePicker/*"
+  end
+
+  s.subspec 'Indicator' do |indicator|
+    indicator.source_files = "core/core/Indicator/*"
+  end
+
+  s.subspec 'Message' do |message|
+    message.source_files = "core/core/Message/*"
+  end
+
+  s.subspec 'Pick' do |pick|
+    pick.source_files = "core/core/Pick/*"
+  end
+
+
+  s.subspec 'Storyboards' do |storyboards|
+    storyboards.source_files = "core/core/Storyboards/*"
+  end
+
+  #s.subspec 'Form' do |form|
+  #  form.source_files = "core/core/Form/*"
+  #end
+
+
+
+
+  #s.exclude_files = "Classes/Exclude"
+  # s.private_header_files = "core/**/*.h"
+  s.public_header_files = "core/core/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -121,6 +169,8 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
+  s.resources = ['core/LinCore.bundle','core/Table/MJRefresh/MJRefresh.bundle']
+
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
@@ -130,11 +180,10 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-   #s.framework  = "libsqlite3.0"
+  # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
-   #s.library   = "sqlite3"
-   s.libraries        = 'sqlite3'
+  # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
 
@@ -147,25 +196,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-
-  #s.xcconfig = {"SWIFT_OBJC_BRIDGING_HEADER" => "LinUtil/util/LinUtil-Bridging-Header.h",
-   #             "LIBRARY_SEARCH_PATHS" => "$(inherited) $(SDKROOT)/usr/lib/system"
-    #            }
-
- #s.xcconfig = {"LIBRARY_SEARCH_PATHS" => "$(inherited) $(SDKROOT)/usr/lib/system"
-  #              }
-#s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-weak-lswiftXCTest', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
-#'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-s.preserve_path    = 'util/*'
-
-#"xcconfig": {
-#    "SWIFT_INCLUDE_PATHS": "${PODS_ROOT}/SQLite.swift/SQLite3"
- # }
-
- # s.xcconfig = {"SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/LinUtil/util"}
-
-  #s.dependency "JSONKit", "~> 1.4"
-
-  #s.dependency 'ObjectiveCPod', '~>3.2.1'
+  # s.dependency "JSONKit", "~> 1.4"
 
 end
