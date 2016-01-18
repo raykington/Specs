@@ -81,7 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -96,7 +97,32 @@ Pod::Spec.new do |s|
   s.source_files  = "server/server/*"
 
   s.subspec 'CocoaHTTPServer' do |cocoaHTTPServer|
-    cocoaHTTPServer.source_files = "server/server/CocoaHTTPServer/**/*"
+    cocoaHTTPServer.source_files = "server/server/CocoaHTTPServer/*"
+
+    cocoaHTTPServer.subspec 'CocoaAsyncSocket' do |asyncSocket|
+      asyncSocket.source_files = "server/server/CocoaHTTPServer/CocoaAsyncSocket/*"
+    end
+
+    cocoaHTTPServer.subspec 'CocoaLumberjack' do |lumberjack|
+      lumberjack.source_files = "server/server/CocoaHTTPServer/CocoaLumberjack/*"
+
+      lumberjack.subspec 'Extensions' do |extensions|
+        extensions.source_files = "server/server/CocoaHTTPServer/CocoaLumberjack/Extensions/*"
+      end
+    end
+
+    cocoaHTTPServer.subspec 'Categories' do |categories|
+      categories.source_files = "server/server/CocoaHTTPServer/Categories/*"
+    end
+    
+    cocoaHTTPServer.subspec 'Mime' do |mime|
+      mime.source_files = "server/server/CocoaHTTPServer/Mime/*"
+    end
+    
+    cocoaHTTPServer.subspec 'Responses' do |responses|
+      responses.source_files = "server/server/CocoaHTTPServer/Responses/*"
+    end
+    
   end
 
   #s.exclude_files = "Classes/Exclude"
