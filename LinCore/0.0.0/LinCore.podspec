@@ -157,6 +157,10 @@ Pod::Spec.new do |s|
     storyboards.source_files = "core/core/Storyboards/*.{h,m,mm}"
   end
 
+  s.subspec 'Update' do |update|
+    update.source_files = "core/core/Update/*.{h,m,mm}"
+  end
+
 
 
 

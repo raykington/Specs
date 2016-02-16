@@ -100,6 +100,10 @@ Pod::Spec.new do |s|
     tcp.source_files = "client/client/tcp/*"
   end
 
+  s.subspec 'Socket' do |socket|
+    socket.source_files = "client/client/Socket/*"
+  end
+
   s.subspec 'http' do |http|
     http.source_files = "client/client/http/*"
   end
