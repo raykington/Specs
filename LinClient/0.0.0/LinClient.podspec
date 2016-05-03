@@ -108,6 +108,11 @@ Pod::Spec.new do |s|
     end
   end
 
+  s.subspec 'http' do |httpdns|
+    httpdns.source_files = "client/client/httpdns/*.{h,m,mm}"
+
+  end
+
   #s.exclude_files = "Classes/Exclude"
 
    #s.public_header_files = "util/**/*.h"
