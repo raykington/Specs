@@ -94,6 +94,10 @@ Pod::Spec.new do |s|
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
   s.source_files  = "web/web/*"
+  s.subspec 'plugins' do |plugins|
+    plugins.source_files = "web/web/plugins/*.{h,m,mm}"
+
+  end
   #s.exclude_files = "Classes/Exclude"
 
    #s.public_header_files = "util/**/*.h"
