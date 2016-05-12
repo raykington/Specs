@@ -146,8 +146,8 @@ Pod::Spec.new do |s|
     storyboards.source_files = "core/core/Storyboards/*"
   end
 
-  s.subspec 'MBProgress' do |MBProgress|
-    MBProgress.source_files = "core/core/MBProgress/*"
+  s.subspec 'MBProgress' do |mbProgress|
+    mbProgress.source_files = "core/core/MBProgress/*"
   end
 
   #s.subspec 'Form' do |form|
