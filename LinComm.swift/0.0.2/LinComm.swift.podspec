@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LinCore.swift"
-  s.module_name  = "LinCore"
-  s.version      = "0.0.0"
+  s.name         = "LinComm.swift"
+  s.module_name  = "LinComm"
+  s.version      = "0.0.2"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.2" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,92 +94,39 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "core/core/*"
+  s.source_files  = "comm/comm/*"
 
+  s.subspec 'tcp' do |tcp|
+    tcp.source_files = "comm/comm/tcp/*"
+  end
 
-  s.subspec 'Table' do |table|
+  s.subspec 'Socket' do |socket|
+    socket.source_files = "comm/comm/Socket/*"
+  end
 
-    table.source_files = "core/core/Table/*"
+  s.subspec 'http' do |http|
+    http.source_files = "comm/comm/http/*"
 
-    table.subspec 'MJRefresh' do |mjrefresh|
-      mjrefresh.source_files = "core/core/Table/MJRefresh/*"
+    http.subspec 'client' do |client|
+        client.source_files = "comm/comm/http/client/*"
     end
 
+    #http.subspec 'server' do |server|
+    #    server.source_files = "comm/comm/http/server/*"
 
-    table.subspec 'JASwipeCell' do |jaSwipeCell|
-      jaSwipeCell.source_files = "core/core/Table/JASwipeCell/*"
-    end
-
-
-    table.subspec 'MGSwipeTableCell' do |mgSwipeTableCell|
-      mgSwipeTableCell.source_files = "core/core/Table/MGSwipeTableCell/*"
-    end
-
+    #    server.subspec 'CocoaHTTPServer' do |cocoaHTTPServer|
+    #        cocoaHTTPServer.source_files = "comm/comm/http/server/CocoaHTTPServer/**/*"
+    #    end
+    #end
   end
 
-  s.subspec 'CheckBox' do |checkBox|
-    checkBox.source_files = "core/core/CheckBox/*"
+  s.subspec 'httpdns' do |httpdns|
+    httpdns.source_files = "comm/comm/httpdns/*"
   end
-
-  s.subspec 'Form' do |form|
-    form.source_files = "core/core/Form/*"
-  end
-
-  s.subspec 'ImagePicker' do |imagePicker|
-    imagePicker.source_files = "core/core/ImagePicker/*"
-  end
-
-  s.subspec 'Indicator' do |indicator|
-    indicator.source_files = "core/core/Indicator/*"
-  end
-
-  s.subspec 'Message' do |message|
-    message.source_files = "core/core/Message/*"
-  end
-
-  s.subspec 'Pick' do |pick|
-    pick.source_files = "core/core/Pick/*"
-  end
-
-
-  s.subspec 'Storyboards' do |storyboards|
-    storyboards.source_files = "core/core/Storyboards/*"
-  end
-
-  
-  s.subspec 'MRProgress' do |progress|
-    progress.source_files = "core/core/MRProgress/*.{h,m,mm}"
-
-    progress.subspec 'Blur' do |blur|
-      blur.source_files = "core/core/MRProgress/Blur/*.{h,m,mm}";
-    end
-
-    progress.subspec 'Components' do |components|
-      components.source_files = "core/core/MRProgress/Components/*.{h,m,mm}"
-    end
-    
-    progress.subspec 'Utils' do |utils|
-      utils.source_files = "core/core/MRProgress/Utils/*.{h,m,mm}"
-    end
-
-  end
-
-
-  s.subspec 'camera' do |camera|
-    camera.source_files = "core/core/camera/*"
-
-    camera.subspec 'SCRecorder' do |scRecorder|
-      scRecorder.source_files = "core/core/camera/SCRecorder/*"
-    end
-    
-  end
-
-
-
 
   #s.exclude_files = "Classes/Exclude"
-  # s.private_header_files = "core/**/*.h"
-  s.public_header_files = "core/core/**/*.h"
+
+   #s.public_header_files = "comm/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -192,9 +139,6 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-
-  s.resources = ['core/LinCore.bundle','core/core/Table/MJRefresh/MJRefresh.bundle']
-  #s.resource_bundles = {'LinCore' => 'core/LinCore.bundle/**'}
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -221,6 +165,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+   s.dependency "LinUtil.swift", s.version.to_s
 
 end

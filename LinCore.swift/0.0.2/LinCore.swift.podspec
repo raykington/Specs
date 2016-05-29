@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LinCore.swift"
   s.module_name  = "LinCore"
-  s.version      = "0.0.0"
+  s.version      = "0.0.2"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -81,8 +81,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  #s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.1" }
-  s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
+  s.source       = { :git => "https://github.com/wangjianglin/swift.git", :tag => "0.0.2" }
+  #s.source       = { :git => "https://github.com/wangjianglin/swift.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
