@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LinComm.swift"
   s.module_name  = "LinComm"
-  s.version      = "0.0.0"
+  s.version      = "0.0.3"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.

@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "LinCore.swift"
   s.module_name  = "LinCore"
-  s.version      = "0.0.0"
+  s.version      = "0.0.3"
   s.summary      = "A short description of util."
 
   # This description is used to generate tags and improve search results.
@@ -165,6 +165,7 @@ Pod::Spec.new do |s|
   end
 
 
+
   s.subspec 'camera' do |camera|
     camera.source_files = "core/core/camera/*"
 
@@ -174,7 +175,9 @@ Pod::Spec.new do |s|
     
   end
 
-
+  s.subspec 'Update' do |update|
+    update.source_files = "core/core/Update/*"
+  end
 
 
   #s.exclude_files = "Classes/Exclude"
@@ -222,5 +225,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  s.dependency "LinUtil.swift", s.version.to_s
 
 end
