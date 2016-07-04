@@ -165,4 +165,5 @@ s.preserve_path    = 'util/*'
   s.dependency "LinUtil.swift", s.version.to_s
   s.dependency "LinCore.swift", s.version.to_s
   s.dependency "LinComm.swift", s.version.to_s
+  s.dependency "ReactiveCocoa"
 end
