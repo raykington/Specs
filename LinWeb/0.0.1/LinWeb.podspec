@@ -93,7 +93,7 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
-  s.source_files  = "web/web/*"
+  s.source_files  = "web/web/**/*"
   #s.exclude_files = "Classes/Exclude"
 
    #s.public_header_files = "util/**/*.h"
