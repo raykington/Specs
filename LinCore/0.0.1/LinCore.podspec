@@ -110,8 +110,8 @@ Pod::Spec.new do |s|
     mjrefresh.source_files = "core/core/MJRefresh/*.{h,m,mm}"
   end
 
-  s.subspec 'Update' do |Update|
-    Update.source_files = "core/core/Update/*.{h,m,mm}"
+  s.subspec 'Update' do |update|
+    update.source_files = "core/core/Update/*.{h,m,mm}"
   end
 
 
