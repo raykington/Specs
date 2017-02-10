@@ -157,7 +157,7 @@ Pod::Spec.new do |s|
   #              }
 #s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-weak-lswiftXCTest', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
 #'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-s.xcconfig = {"SWIFT_VERSION","3.0.1"}
+s.xcconfig = {"SWIFT_VERSION" => "3.0.1"}
 s.preserve_path    = 'util/*'
 
 #"xcconfig": {
