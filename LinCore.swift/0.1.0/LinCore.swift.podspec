@@ -94,6 +94,7 @@ Pod::Spec.new do |s|
   #
 
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
+  s.xcconfig = {"SWIFT_VERSION" => "3.0.1"}
   s.source_files  = "core/core/*"
 
 

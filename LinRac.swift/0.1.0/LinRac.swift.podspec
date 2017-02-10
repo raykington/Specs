@@ -158,7 +158,7 @@ s.preserve_path    = 'util/*'
  # }
 
  # s.xcconfig = {"SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/LinUtil/util"}
-
+s.xcconfig = {"SWIFT_VERSION" => "3.0.1"}
   #s.dependency "JSONKit", "~> 1.4"
 
   #s.dependency 'ObjectiveCPod', '~>3.2.1'
