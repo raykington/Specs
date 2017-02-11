@@ -96,7 +96,9 @@ Pod::Spec.new do |s|
   #s.source_files  = "Classes", "util/**/*.{h,m,swift}"
   s.source_files  = "rac/rac/*"
 
-
+  s.subspec 'ext' do |ext|
+    ext.source_files = "rac/rac/ext/*.{h,m,swift}"
+  end
 
   #s.exclude_files = "Classes/Exclude"
 
@@ -151,7 +153,7 @@ Pod::Spec.new do |s|
   #              }
 #s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-weak-lswiftXCTest', 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
 #'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-s.preserve_path    = 'util/*'
+#s.preserve_path    = 'util/*'
 
 #"xcconfig": {
 #    "SWIFT_INCLUDE_PATHS": "${PODS_ROOT}/SQLite.swift/SQLite3"
