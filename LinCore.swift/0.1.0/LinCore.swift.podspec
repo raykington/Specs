@@ -180,6 +180,10 @@ Pod::Spec.new do |s|
     update.source_files = "core/core/Update/*"
   end
 
+  s.subspec 'MyLayout' do |myLayout|
+    myLayout.source_files = "core/core/MyLayout/*"
+  end
+
 
   #s.exclude_files = "Classes/Exclude"
   # s.private_header_files = "core/**/*.h"
