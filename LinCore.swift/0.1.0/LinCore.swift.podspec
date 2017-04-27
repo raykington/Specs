@@ -103,7 +103,7 @@ Pod::Spec.new do |s|
     table.source_files = "core/core/Table/*"
 
     table.subspec 'MJRefresh' do |mjrefresh|
-      mjrefresh.source_files = "core/core/Table/MJRefresh/*"
+      mjrefresh.source_files = "core/core/Table/MJRefresh/**/*"
     end
 
 
