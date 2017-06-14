@@ -173,6 +173,10 @@ Pod::Spec.new do |s|
     camera.subspec 'SCRecorder' do |scRecorder|
       scRecorder.source_files = "core/core/camera/SCRecorder/*"
     end
+
+    camera.subspec 'LGPhoto' do |lgPhoto|
+      lgPhoto.source_files = "core/core/camera/LGPhoto/**/*"
+    end
     
   end
 
